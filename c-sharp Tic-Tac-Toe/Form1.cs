@@ -16,5 +16,16 @@ namespace c_sharp_Tic_Tac_Toe
         {
             InitializeComponent();
         }
+        
+        //background colors of character setup
+        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if (e.Row == e.Column)
+                using (SolidBrush brush = new SolidBrush(Color.LightBlue))
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+            else
+                using (SolidBrush brush = new SolidBrush(Color.IndianRed))
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+        }
     }
 }
